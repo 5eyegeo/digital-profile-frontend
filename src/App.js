@@ -2,6 +2,8 @@ import './App.css';
 import {useState} from "react";
 import APIS from "./constants/EndPoint";
 import usePostHookNoAuth from "./customHooks/usePostHookNoAuth";
+import {BrowserRouter} from "react-router-dom";
+import PageRouter from "./routers/PageRoute";
 
 
 const initialFormData = Object.freeze({
@@ -34,18 +36,10 @@ function App() {
 
 
   return (
-    <div className="App" style={{marginTop: "20px"}}>
-      <label>
-        Email
-        <input type={"email"} name="email" onChange={handleChange}/>
-      </label>
-      <br/>
-      <label>
-        Password
-        <input type={"password"} name="password" onChange={handleChange}/>
-      </label>
-      <br/>
-      <button onClick={handleSubmit}>Submit</button>
+    <div className="App">
+      <BrowserRouter>
+        <PageRouter/>
+      </BrowserRouter>
     </div>
   );
 }

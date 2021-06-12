@@ -1,17 +1,11 @@
-import {getKey} from "../helpers/sessionKey";
-import Dashboard from "../pages/Dashboard/Dashboard";
-import Group from "../pages/Account/Groups";
+import Dashboard from "../pages/Dashboard";
+import Group from "../pages/Account/Group";
 import GroupDetail from "../pages/Account/GroupDetail";
-import User from "../pages/Account/Users";
+import User from "../pages/Account/User";
+import Settings from "../pages/Settings";
 import AccountProfile from "../pages/Account/AccountProfile";
-import AccountProfileEdit from "../pages/Account/AccountProfileEdit";
-import Profile from "../pages/Auth/Profile";
-import Settings from "../pages/Edseed/Settings";
-import EmailServer from "../pages/Edseed/EmailServer";
+import Profile from "../pages/Account/Profile";
 
-
-
-const client = JSON.parse(getKey('client')) || [];
 
 const PrivateRouteItem = [
   {
@@ -35,10 +29,6 @@ const PrivateRouteItem = [
     component: AccountProfile
   },
   {
-    path: "/users/edit/:profileID",
-    component: AccountProfileEdit
-  },
-  {
     path: "/profile/",
     component: Profile
   },
@@ -46,9 +36,5 @@ const PrivateRouteItem = [
     path: "/settings",
     component: Settings
   },
-  {
-    path: "/email-server",
-    component: EmailServer
-  }
 ]
 export default PrivateRouteItem

@@ -72,7 +72,7 @@ export const postApiDataNoAuth = async (data) => {
       }],
     });
   } catch (e) {
-    console.log(e.response)
+    return e.response
   }
   return response;
 }
