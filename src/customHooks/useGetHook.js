@@ -2,7 +2,7 @@ import React from 'react';
 import {useQuery} from "react-query";
 import {getApiData} from "../helpers/AxiosInstance";
 
-const useGetDataHook = ({queryKey, url, parma}) => {
+const useGetHook = ({queryKey, url, parma}) => {
   const {isLoading, isError, data, isSuccess} = useQuery(queryKey, async () => {
       const response = await getApiData(url, parma);
       return response.data;
@@ -14,4 +14,4 @@ const useGetDataHook = ({queryKey, url, parma}) => {
   return [isLoading, isError, data, isSuccess];
 };
 
-export default useGetDataHook;
+export default useGetHook;

@@ -5,7 +5,8 @@ const APIS = {
   REFRESH: `/auth/jwt/refresh/`,
   CURRENT_USER_PROFILE: '/auth/users/me/',
   PERMISSIONS:`/permissions/`,
-  PRODUCTS:`/products/`
+  USER_LIST:`/auth/users/`,
+  GROUP_LIST:`auth-permission/group/`,
 }
 
 export default APIS
