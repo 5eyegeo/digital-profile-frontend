@@ -30,18 +30,18 @@ const Navbar = (props) => {
   const handleLogout = () => {
     setAnchorEl(null);
     removeKey('userAuth');
+    removeKey('user');
     history.push("/login");
-    history.go();
   };
 
   const handleProfilePage = () => {
     setAnchorEl(null);
-    history.push(('/profile/'))
+    history.push('/profile/')
   }
 
   return (
     <>
-      <AppBar position="fixed" className={classes.appBar}>
+      <AppBar position="fixed" className={classes.appBar} style={{textAlign: "left"}}>
         <Toolbar disableGutters={true}>
           <IconButton
             color="inherit"
@@ -63,7 +63,7 @@ const Navbar = (props) => {
             className={classes.grow}
             noWrap
           >
-            Edseed ERP
+            DIGITAL PROFILE SYSTEM
           </Typography>
           <div>
             <IconButton
