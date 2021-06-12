@@ -7,6 +7,7 @@ import useDashboardLayoutStyle from "./DashboardLayoutStyle";
 import Navbar from "../components/Navbar/Navbar";
 
 
+
 const DashboardLayout = ({children}) => {
   const classes = useDashboardLayoutStyle();
   const [open, setOpen] = useState(false);
@@ -19,7 +20,7 @@ const DashboardLayout = ({children}) => {
     <div className={classes.root}>
       <>
         <CssBaseline/>
-        <Navbar open={open} handleDrawerOpen={handleDrawerOpen}/>
+        <Navbar open={open} handleDrawerOpen={handleDrawerOpen} />
         <Drawer
           variant="permanent"
           className={classNames(classes.drawer, {
@@ -35,10 +36,11 @@ const DashboardLayout = ({children}) => {
           open={open}
         >
           <div className={classes.toolbar}/>
-          <SidePanel/>
+          <SidePanel />
         </Drawer>
         <main className={classes.content}>
           <div className={classes.toolbar}/>
+          {children}
         </main>
       </>
     </div>

@@ -1,22 +1,18 @@
-const checkPermissions = (userPermissions, allowedPermissions) => {
+import {getKey} from "./sessionKey";
+
+const user = JSON.parse(getKey('user'));
+
+const checkPermissions = (allowedPermissions) => {
   if (allowedPermissions.length === 0) {
     return true;
   }
-
-  return userPermissions.some(permission =>
-    allowedPermissions.includes(permission)
+  return user.permissions.some(permission =>
+    allowedPermissions.includes(permission['codename'])
   );
 };
 
-const AccessControl = (
-  {
-    userPermissions,
-    allowedPermissions,
-    children,
-    renderNoAccess,
-  }) => {
-  const permitted = checkPermissions(userPermissions, allowedPermissions);
-
+const AccessControl = ({allowedPermissions, children, renderNoAccess,}) => {
+  const permitted = checkPermissions(allowedPermissions);
   if (permitted) {
     return children;
   }

@@ -1,9 +1,16 @@
 import React from 'react';
+import AccessControl from "../../helpers/AccessControl";
+import StyledPermissionDenied from "../../components/Reusable/StyledPermissionDenied";
 
 const Dashboard = (props) => {
   return (
     <>
-      <h1>Dashboard</h1>
+      <AccessControl
+        allowedPermissions={["change_logentry", "delete_logentry"]}
+        renderNoAccess={StyledPermissionDenied}
+      >
+        <h1>Can add Item</h1>
+      </AccessControl>
     </>
   );
 };
