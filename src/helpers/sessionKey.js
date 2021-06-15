@@ -25,7 +25,12 @@ export const removeKey = (key) => {
 
 export const accessToken = () => {
   const authToken = JSON.parse(getKey('userAuth'));
-// eslint-disable-next-line
-  const {accessToken, refreshToken} = authToken;
+  const {accessToken, refreshToken, permissions, user} = authToken;
   return accessToken
+}
+
+export const permissions = () => {
+  const authToken = JSON.parse(getKey('userAuth'));
+  const {accessToken, refreshToken, permissions, user} = authToken;
+  return permissions
 }

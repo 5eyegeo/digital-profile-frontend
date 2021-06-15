@@ -1,13 +1,10 @@
-import {getKey} from "./sessionKey";
-
-const user = JSON.parse(getKey('user'));
-console.log(user.permissions)
+import {permissions} from "./sessionKey";
 
 const checkPermissions = (allowedPermissions) => {
   if (allowedPermissions.length === 0) {
     return true;
   }
-  return user?.permissions.some(permission =>
+  return permissions().some(permission =>
     allowedPermissions.includes(permission['codename'])
   );
 };

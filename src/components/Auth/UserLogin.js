@@ -31,7 +31,7 @@ const UserLogin = (props) => {
           <Divider/>
         </Grid>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
-          {errorMsg ?<Alert severity="error">{errorMsg[0]}!</Alert>:''}
+          {errorMsg ?<Alert severity="error">{errorMsg}!</Alert>:''}
         </Grid>
         <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
           <Formik

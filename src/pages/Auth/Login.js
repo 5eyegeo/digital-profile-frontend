@@ -19,14 +19,16 @@ const Login = (props) => {
     }
   };
 
+
   useEffect(() => {
     if (postData?.status === 200) {
       const userAuth = {
         accessToken: postData.data.access,
-        refreshToken: postData.data.refresh
+        refreshToken: postData.data.refresh,
+        permissions: postData.data.user.permissions,
+        user: postData.data.user
       };
       setKey("userAuth", JSON.stringify(userAuth))
-      setKey("user", JSON.stringify(postData.data.user))
       history.push('/')
     } else {
       history.push('/login')

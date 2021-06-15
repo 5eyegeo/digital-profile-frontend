@@ -1,11 +1,10 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import classNames from "classnames";
 import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import SidePanel from "../components/SidePanel/SidePanel";
 import useDashboardLayoutStyle from "./DashboardLayoutStyle";
 import Navbar from "../components/Navbar/Navbar";
-
 
 
 const DashboardLayout = ({children}) => {
@@ -15,12 +14,11 @@ const DashboardLayout = ({children}) => {
   const handleDrawerOpen = () => {
     setOpen(!open);
   };
-
   return (
     <div className={classes.root}>
       <>
         <CssBaseline/>
-        <Navbar open={open} handleDrawerOpen={handleDrawerOpen} />
+        <Navbar open={open} handleDrawerOpen={handleDrawerOpen}/>
         <Drawer
           variant="permanent"
           className={classNames(classes.drawer, {
@@ -36,7 +34,7 @@ const DashboardLayout = ({children}) => {
           open={open}
         >
           <div className={classes.toolbar}/>
-          <SidePanel />
+          <SidePanel/>
         </Drawer>
         <main className={classes.content}>
           <div className={classes.toolbar}/>

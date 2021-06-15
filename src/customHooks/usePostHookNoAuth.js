@@ -15,7 +15,7 @@ const usePostHook = () => {
   } = useMutation(postApiDataNoAuth, {
     onSuccess: data => {
       if (data.status === 401) {
-        setErrorMsg(data.data.errors['AuthenticationFailed'])
+        setErrorMsg(data.data.detail)
       }
     },
     onError: error => {
