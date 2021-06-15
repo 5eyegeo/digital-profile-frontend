@@ -1,9 +1,9 @@
 import Axios from 'axios';
-import {accessToken} from "./sessionKey";
+import { accessToken } from "./sessionKey";
 
 //create axios instance
 const instance = Axios.create({
-  baseURL: `https://dibformdemo.dibtech.com.au/backend/api/v1`,
+  baseURL: `https://digitalprofile.5eyegeo.com/api`,
   headers: {
     "Content-Type": "application/json",
   },
@@ -33,7 +33,7 @@ export const getApiData = async (url, param) => {
 
 //post data to api
 export const postApiData = async (data) => {
-  const {url, formData} = data;
+  const { url, formData } = data;
   let response;
   try {
     response = await instance({
@@ -56,7 +56,7 @@ export const postApiData = async (data) => {
 
 //post data to api
 export const postApiDataNoAuth = async (data) => {
-  const {url, formData} = data;
+  const { url, formData } = data;
   let response;
   try {
     response = await instance({
@@ -82,7 +82,7 @@ export const postApiDataNoAuth = async (data) => {
 
 //update data
 export const putApiData = async (data) => {
-  const {url, formData} = data;
+  const { url, formData } = data;
   let response;
   try {
     response = await instance({
