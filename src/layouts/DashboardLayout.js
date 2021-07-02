@@ -1,43 +1,16 @@
-import React, {useEffect, useState} from "react";
-import classNames from "classnames";
-import Drawer from "@material-ui/core/Drawer";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import SidePanel from "../components/SidePanel/SidePanel";
+import React from "react";
 import useDashboardLayoutStyle from "./DashboardLayoutStyle";
-import Navbar from "../components/Navbar/Navbar";
+import SidePanel from "../components/SidePanel/SidePanel";
 
-
-const DashboardLayout = ({children}) => {
+const DashboardLayout = ({ children }) => {
   const classes = useDashboardLayoutStyle();
-  const [open, setOpen] = useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(!open);
-  };
+  console.log('dashboard layout');
   return (
     <div className={classes.root}>
       <>
-        <CssBaseline/>
-        <Navbar open={open} handleDrawerOpen={handleDrawerOpen}/>
-        <Drawer
-          variant="permanent"
-          className={classNames(classes.drawer, {
-            [classes.drawerOpen]: open,
-            [classes.drawerClose]: !open,
-          })}
-          classes={{
-            paper: classNames({
-              [classes.drawerOpen]: open,
-              [classes.drawerClose]: !open,
-            }),
-          }}
-          open={open}
-        >
-          <div className={classes.toolbar}/>
-          <SidePanel/>
-        </Drawer>
+        <SidePanel />
         <main className={classes.content}>
-          <div className={classes.toolbar}/>
+          <div className={classes.toolbar} />
           {children}
         </main>
       </>

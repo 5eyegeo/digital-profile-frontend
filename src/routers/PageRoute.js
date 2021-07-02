@@ -1,18 +1,18 @@
 import Login from "../pages/Auth/Login";
 import PageNotFound from "../pages/Error/PageNotFound";
-import {Route, Switch} from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import AuthLayout from "../layouts/AuthLayout";
 import PrivateRoute from "./PrivateRoute";
 import NoInterNetConnection from "../pages/Error/NoInterNetConnection";
 import PrivateRouteItem from "./PrivateRouteItem";
 
-const AppRoute = ({component: Component, layout: Layout, ...rest}) => {
+const AppRoute = ({ component: Component, layout: Layout, ...rest }) => {
   return (
     <Route
       {...rest}
       render={(props) => (
         <Layout>
-          <Component {...props}/>
+          <Component {...props} />
         </Layout>
       )}
     />
@@ -38,8 +38,8 @@ const PageRouter = () => {
           component={NoInterNetConnection}
           layout={AuthLayout}
         />
-        <AppRoute exact path="/login" component={Login} layout={AuthLayout}/>
-        <PrivateRoute component={PageNotFound}/>
+        <AppRoute exact path="/login" component={Login} layout={AuthLayout} />
+        <PrivateRoute component={PageNotFound} />
       </Switch>
     </>
   );
